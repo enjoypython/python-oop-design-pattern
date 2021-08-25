@@ -54,6 +54,7 @@ class PokemonAdapter:
     def __getattr__(self, attr: str) -> Any:
         return getattr(self._obj, attr)
 
+    @property
     def cry(self):
         return self._obj.cry
 
@@ -68,6 +69,6 @@ if __name__ == "__main__":
     pokemon_objects.append(PokemonAdapter(eevee, attack=eevee.normal_attack()))
 
     for obj in pokemon_objects:
-        print(f"가라 {obj.name}! : {obj.cry()}")
+        print(f"가라 {obj.name}! : {obj.cry}")
         print(obj.attack)
         print()
