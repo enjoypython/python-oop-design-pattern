@@ -53,8 +53,8 @@ class Pokemon(metaclass=ABCMeta):
 
 
 class GrassPokemon(Pokemon):
-    def __init__(self, id, name, type, power, defense):
-        super().__init__(id, name, type, power, defense)
+    def __init__(self, id, name, power, defense):
+        super().__init__(id=id, name=name, type='Grass', power=power, defense=defense)
 
     def calculate_damage_multiplier(self):
         multiple = 1
@@ -71,8 +71,8 @@ class GrassPokemon(Pokemon):
 
 
 class FirePokemon(Pokemon):
-    def __init__(self, id, name, type, power, defense):
-        super().__init__(id, name, type, power, defense)
+    def __init__(self, id, name, power, defense):
+        super().__init__(id=id, name=name, type='Fire', power=power, defense=defense)
 
     def calculate_damage_multiplier(self):
         multiple = 1
@@ -89,8 +89,8 @@ class FirePokemon(Pokemon):
 
 
 class IcePokemon(Pokemon):
-    def __init__(self, id, name, type, power, defense):
-        super().__init__(id, name, type, power, defense)
+    def __init__(self, id, name, power, defense):
+        super().__init__(id=id, name=name, type='Ice', power=power, defense=defense)
 
     def calculate_damage_multiplier(self):
         multiple = 1
@@ -108,9 +108,9 @@ class IcePokemon(Pokemon):
 
 water_type_damage = Damage("Water", 70)
 
-chikorita = GrassPokemon(id=152, name="치코리타", type="Grass", power=70, defense=70)
-charmander = FirePokemon(id=4, name="파이리", type="Fire", power=75, defense=60)
-glaceon = IcePokemon(id=471, name="글레이시아", type="Ice", power=70, defense=55)
+chikorita = GrassPokemon(id=152, name="치코리타", power=70, defense=70)
+charmander = FirePokemon(id=4, name="파이리", power=75, defense=60)
+glaceon = IcePokemon(id=471, name="글레이시아", power=70, defense=55)
 
 print()
 print(chikorita)
