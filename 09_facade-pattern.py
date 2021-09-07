@@ -2,44 +2,54 @@ from abc import ABCMeta, abstractmethod
 
 
 class Server(metaclass=ABCMeta):
+    @staticmethod
     @abstractmethod
     def boot(self):
         pass
 
+    @staticmethod
     @abstractmethod
     def shutdown(self):
         pass
 
 
 class LocalPokemonServer(Server):
-    def boot(self):
+    @staticmethod
+    def boot():
         print("Local Network Server On")
 
-    def shutdown(self):
+    @staticmethod
+    def shutdown():
         print("Local Network Server Off")
 
 
 class GameNetworkServer(Server):
-    def boot(self):
+    @staticmethod
+    def boot():
         print("Global Network Server On")
 
-    def shutdown(self):
+    @staticmethod
+    def shutdown():
         print("Local Network Server Off")
 
 
 class GlobalBattleServer(Server):
-    def boot(self):
+    @staticmethod
+    def boot():
         print("GBS Server On")
 
-    def shutdown(self):
+    @staticmethod
+    def shutdown():
         print("Local Network Server Off")
 
 
 class GlobalTradeServer(Server):
-    def boot(self):
+    @staticmethod
+    def boot():
         print("GTS Server On")
 
-    def shutdown(self):
+    @staticmethod
+    def shutdown():
         print("Local Network Server Off")
 
 
