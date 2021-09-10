@@ -29,16 +29,20 @@ class PokemonSettings:
     def level(self, level):
         self._level = level
 
-        if self.pokemon_obj.evolve_level >= self.level:
-            self.pokemon_obj = self.pokemon_obj.next_evolve_pokemon
-            print(f"\nYour {self.nickname} is evolving into {self.pokemon_obj.name}!\n")
+        if isinstance(self.pokemon_obj.evolve_level, int):
+            if self.pokemon_obj.evolve_level >= self.level:
+                self.pokemon_obj = self.pokemon_obj.next_evolve_pokemon
+                print(f"\nYour {self.nickname} is evolving into {self.pokemon_obj.name}!")
 
     @classmethod
     def create(cls, pokemon_obj, nickname, level):
         return cls(_pokemon_obj=pokemon_obj, _nickname=nickname, _level=level)
 
     def __str__(self):
-        return f"pokemon: {self.pokemon_obj.name}\nindex: {self.pokemon_obj.index}\nnickname: {self.nickname}"
+        return f"""\npokemon: {self.pokemon_obj.name} \
+         \nindex: {self.pokemon_obj.index} \
+         \nnickname: {self.nickname}
+         """
 
 
 @dataclass
@@ -76,4 +80,8 @@ if __name__ == "__main__":
 
     # Level Up and evolve
     chiko.level = 32
+    print(chiko)
+
+    # Level Up without evolve
+    chiko.level = 50
     print(chiko)
