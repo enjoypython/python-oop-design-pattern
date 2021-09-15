@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 import collections
 
 
@@ -91,7 +90,7 @@ class Trainer:
     def buy_ball(self, item: str, amount: int):
         pokeball_store = PokeballStore()
 
-        if response := pokeball_store.purchase(item, amount):
+        if pokeball_store.purchase(item, amount):
             self._items[item] += amount
             print(f"{self._name} bought {amount} amount(s) of {item}!")
         else:

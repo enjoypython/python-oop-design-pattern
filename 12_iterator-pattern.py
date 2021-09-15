@@ -39,11 +39,13 @@ class PokemonIterator(Iterator):
         raise Exception("End of Iterator")
 
 
-bulbasaur = Pokemon(1, "bulbasaur")
-charmander = Pokemon(2, "charmander")
-squirtle = Pokemon(3, "squirtle")
+if __name__ == "__main__":
+    bulbasaur = Pokemon(1, "bulbasaur")
+    charmander = Pokemon(2, "charmander")
+    squirtle = Pokemon(3, "squirtle")
 
-pokemon_aggregates = [bulbasaur, charmander, squirtle]
-iterable = PokemonIterator(pokemon_aggregates)
-while iterable.has_next():
-    iterable.next().method()
+    pokemon_aggregates = [bulbasaur, charmander, squirtle]
+    iterable = PokemonIterator(pokemon_aggregates)
+
+    while iterable.has_next():
+        iterable.next().method()

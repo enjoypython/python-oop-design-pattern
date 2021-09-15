@@ -26,7 +26,6 @@ class Squirtle(Pokemon):
 
 
 class AttackBehavior(metaclass=ABCMeta):
-    
     @abstractmethod
     def attack(self):
         pass
@@ -34,16 +33,15 @@ class AttackBehavior(metaclass=ABCMeta):
 
 class ElectronicAttack(AttackBehavior):
     def attack(self):
-        print('100만 볼트!')
+        print("100만 볼트!")
 
 
 class AquaAttack(AttackBehavior):
     def attack(self):
-        print('물대포!')
+        print("물대포!")
 
 
 class CryingBehavior(metaclass=ABCMeta):
-    
     @abstractmethod
     def crying(self):
         pass
@@ -51,23 +49,24 @@ class CryingBehavior(metaclass=ABCMeta):
 
 class PikachuCrying(CryingBehavior):
     def crying(self):
-        print('Pika Pika')
+        print("Pika Pika")
 
 
 class SquirtleCrying(CryingBehavior):
     def crying(self):
-        print('꼬북 꼬북')
+        print("꼬북 꼬북")
 
 
-# Pikachu
-pikachu = Pikachu()
-pikachu.perform_crying()
-pikachu.perform_attack()
+if __name__ == "__main__":
+    # Pikachu
+    pikachu = Pikachu()
+    pikachu.perform_crying()
+    pikachu.perform_attack()
 
-print()
-print()
+    print()
+    print()
 
-# Squirtle
-squirtle = Squirtle()
-squirtle.perform_crying()
-squirtle.perform_attack()
+    # Squirtle
+    squirtle = Squirtle()
+    squirtle.perform_crying()
+    squirtle.perform_attack()

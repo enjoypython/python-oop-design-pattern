@@ -4,7 +4,7 @@ from abc import ABCMeta, abstractmethod
 # Invoker
 class TrainerControl:
     def __init__(self):
-        self.on_command  = []
+        self.on_command = []
         self.off_command = []
 
     def set_command(self, on_command):
@@ -23,6 +23,7 @@ class Mode(metaclass=ABCMeta):
     def off(self):
         pass
 
+
 class Attack(Mode):
     def on(self):
         print("Attack Mode On")
@@ -30,19 +31,21 @@ class Attack(Mode):
     def off(self):
         print("Attack Mode Off")
 
+
 class Defense(Mode):
     def on(self):
-        print('Defense Mode On')
+        print("Defense Mode On")
 
     def off(self):
-        print('Defense Mode Off')
+        print("Defense Mode Off")
+
 
 class Hide(Mode):
     def on(self):
-        print('Hide Mode On')
+        print("Hide Mode On")
 
     def off(self):
-        print('Hide Mode Off')
+        print("Hide Mode Off")
 
 
 # Command
@@ -56,7 +59,7 @@ class Command(metaclass=ABCMeta):
 
 
 class AttackCommand(Command):
-    def __init__(self, attack:Attack):
+    def __init__(self, attack: Attack):
         self.attack = attack
         self.status = False
 
@@ -70,7 +73,7 @@ class AttackCommand(Command):
 
 
 class DefenseCommand(Command):
-    def __init__(self, defense:Defense):
+    def __init__(self, defense: Defense):
         self.defense = defense
         self.status = False
 
@@ -84,7 +87,7 @@ class DefenseCommand(Command):
 
 
 class HideCommand(Command):
-    def __init__(self, hide:Hide):
+    def __init__(self, hide: Hide):
         self.hide = hide
         self.status = False
 
@@ -97,29 +100,30 @@ class HideCommand(Command):
             self.status = False
 
 
-# Invoker
-ash = TrainerControl()
+if __name__ == "__main__":
+    # Invoker
+    ash = TrainerControl()
 
-# Receiver
-attack = Attack()
-defense = Defense()
-hide = Hide()
+    # Receiver
+    attack = Attack()
+    defense = Defense()
+    hide = Hide()
 
-# Command
-attack_toggle_command = AttackCommand(attack)
-defense_toggle_command = DefenseCommand(defense)
-hide_toggle_command = HideCommand(hide)
+    # Command
+    attack_toggle_command = AttackCommand(attack)
+    defense_toggle_command = DefenseCommand(defense)
+    hide_toggle_command = HideCommand(hide)
 
-# SetCommand
-ash.set_command(attack_toggle_command)
-ash.set_command(defense_toggle_command)
-ash.set_command(hide_toggle_command)
+    # SetCommand
+    ash.set_command(attack_toggle_command)
+    ash.set_command(defense_toggle_command)
+    ash.set_command(hide_toggle_command)
 
-# Execute
-ash.on_shortcut_command(0)
-ash.on_shortcut_command(0)
+    # Execute
+    ash.on_shortcut_command(0)
+    ash.on_shortcut_command(0)
 
-ash.on_shortcut_command(1)
-ash.on_shortcut_command(2)
-ash.on_shortcut_command(2)
-ash.on_shortcut_command(1)
+    ash.on_shortcut_command(1)
+    ash.on_shortcut_command(2)
+    ash.on_shortcut_command(2)
+    ash.on_shortcut_command(1)

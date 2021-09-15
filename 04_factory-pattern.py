@@ -56,12 +56,13 @@ class WaterPokemonFactory(Factory):
             return Squirtle()
 
 
-electro_pokemon_factory = ElectronicPokemonFactory()
-pikachu = electro_pokemon_factory.create_pokemon("Pikachu")
-print(pikachu)
+if __name__ == "__main__":
+    electro_pokemon_factory = ElectronicPokemonFactory()
+    pikachu = electro_pokemon_factory.create_pokemon("Pikachu")
+    print(pikachu)
 
-print()
+    print()
 
-water_pokemon_factory = WaterPokemonFactory()
-squirtle = water_pokemon_factory.create_pokemon("Squirtle")
-print(squirtle)
+    water_pokemon_factory = WaterPokemonFactory()
+    squirtle = water_pokemon_factory.create_pokemon("Squirtle")
+    print(squirtle)

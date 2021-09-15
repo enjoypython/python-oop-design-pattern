@@ -63,16 +63,17 @@ class StaticEventObserver(EventObserver):
         print(f"Static Event Observer [hp : {self.hp}, status : {self.status}]")
 
 
-pikachu = Pokemon("pikachu", 100)
+if __name__ == "__main__":
+    pikachu = Pokemon("pikachu", 100)
 
-current_observer = CurrentEventObserver()
-static_observer = StaticEventObserver()
+    current_observer = CurrentEventObserver()
+    static_observer = StaticEventObserver()
 
-pikachu.attach(current_observer)
-pikachu.attach(static_observer)
+    pikachu.attach(current_observer)
+    pikachu.attach(static_observer)
 
-pikachu.change_status("110", "Excellent")
+    pikachu.change_status("110", "Excellent")
 
-print()
+    print()
 
-pikachu.change_status("90", "Good")
+    pikachu.change_status("90", "Good")

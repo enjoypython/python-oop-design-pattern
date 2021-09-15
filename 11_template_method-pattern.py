@@ -54,7 +54,7 @@ class Pokemon(metaclass=ABCMeta):
 
 class GrassPokemon(Pokemon):
     def __init__(self, id, name, power, defense):
-        super().__init__(id=id, name=name, type='Grass', power=power, defense=defense)
+        super().__init__(id=id, name=name, type="Grass", power=power, defense=defense)
 
     def calculate_damage_multiplier(self):
         multiple = 1
@@ -72,7 +72,7 @@ class GrassPokemon(Pokemon):
 
 class FirePokemon(Pokemon):
     def __init__(self, id, name, power, defense):
-        super().__init__(id=id, name=name, type='Fire', power=power, defense=defense)
+        super().__init__(id=id, name=name, type="Fire", power=power, defense=defense)
 
     def calculate_damage_multiplier(self):
         multiple = 1
@@ -90,7 +90,7 @@ class FirePokemon(Pokemon):
 
 class IcePokemon(Pokemon):
     def __init__(self, id, name, power, defense):
-        super().__init__(id=id, name=name, type='Ice', power=power, defense=defense)
+        super().__init__(id=id, name=name, type="Ice", power=power, defense=defense)
 
     def calculate_damage_multiplier(self):
         multiple = 1
@@ -106,26 +106,27 @@ class IcePokemon(Pokemon):
         return multiple
 
 
-water_type_damage = Damage("Water", 70)
+if __name__ == "__main__":
+    water_type_damage = Damage("Water", 70)
 
-chikorita = GrassPokemon(id=152, name="치코리타", power=70, defense=70)
-charmander = FirePokemon(id=4, name="파이리", power=75, defense=60)
-glaceon = IcePokemon(id=471, name="글레이시아", power=70, defense=55)
+    chikorita = GrassPokemon(id=152, name="치코리타", power=70, defense=70)
+    charmander = FirePokemon(id=4, name="파이리", power=75, defense=60)
+    glaceon = IcePokemon(id=471, name="글레이시아", power=70, defense=55)
 
-print()
-print(chikorita)
-chikorita.get_damage(water_type_damage)
-chikorita.calculate_damage()
-chikorita.show_damage()
+    print()
+    print(chikorita)
+    chikorita.get_damage(water_type_damage)
+    chikorita.calculate_damage()
+    chikorita.show_damage()
 
-print()
-print(charmander)
-charmander.get_damage(water_type_damage)
-charmander.calculate_damage()
-charmander.show_damage()
+    print()
+    print(charmander)
+    charmander.get_damage(water_type_damage)
+    charmander.calculate_damage()
+    charmander.show_damage()
 
-print()
-print(glaceon)
-glaceon.get_damage(water_type_damage)
-glaceon.calculate_damage()
-glaceon.show_damage()
+    print()
+    print(glaceon)
+    glaceon.get_damage(water_type_damage)
+    glaceon.calculate_damage()
+    glaceon.show_damage()

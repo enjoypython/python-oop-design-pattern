@@ -22,7 +22,7 @@ class CondimentDecorator(Pokemon, metaclass=ABCMeta):
     @abstractmethod
     def description(self):
         pass
-        
+
     @property
     @abstractmethod
     def rare_value(self):
