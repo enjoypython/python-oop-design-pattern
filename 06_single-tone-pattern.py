@@ -1,4 +1,5 @@
 import collections
+from dataclasses import dataclass, field
 
 
 class Singleton:
@@ -82,10 +83,10 @@ class PokeballStore(Singleton):
         return response
 
 
+@dataclass(unsafe_hash=True)
 class Trainer:
-    def __init__(self, name):
-        self._name = name
-        self._items = collections.defaultdict(int)
+    _name: str
+    _items : dict = field(default_factory=lambda: collections.defaultdict(int), hash=True, repr=False)
 
     def buy_ball(self, item: str, amount: int):
         pokeball_store = PokeballStore()
@@ -98,7 +99,7 @@ class Trainer:
 
     def show_items(self):
         print(self._items)
-
+        
 
 def main():
     trainer_01 = Trainer("지우")
